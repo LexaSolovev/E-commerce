@@ -14,7 +14,7 @@ def test_product_init2(second_product):
     assert second_product.price == 210000.0
     assert second_product.quantity == 8
 
-def test_product_new_product():
+def test_product_new_product(capsys):
     product = Product.new_product(
         {
         "name": "Samsung Galaxy S23 Ultra",
@@ -29,3 +29,6 @@ def test_product_new_product():
     assert product.quantity == 5
     product.price = 190000.0
     assert product.price == 190000.0
+    product.price = -1
+    message = capsys.readouterr()
+    assert "Цена не должна быть нулевая или отрицательная" in message.out.strip()
