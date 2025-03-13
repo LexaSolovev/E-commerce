@@ -6,6 +6,8 @@ from src.utils import read_json
 
 
 def test_read_json():
+    Category.category_count = 0
+    Category.product_count = 0
     path_to_json = os.path.join(PATH_DATA, "products.json")
     categories = read_json(path_to_json)
     assert Category.category_count == 2

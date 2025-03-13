@@ -10,7 +10,7 @@
 
         name: str # Наименование продукта
         description: str # Описание продукта
-        price: float # Цена продукта
+        price: float # Цена продукта 
         quantity: int # Количество продукта
 
 
@@ -22,10 +22,18 @@
         description: str # Описание категории
         products: list[Product] # Список продуктов
 
+   Методы:
+
+         add_product(self, product: Product) - добавляет продукт в список продуктов
+
     Атрибуты класса:
     
         category_count # Счетчик количества категорий
         product_count # Счетчик количества продуктов
+
+   
+      
+   
     
 
 ## Тестирование   
