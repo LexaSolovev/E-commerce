@@ -1,4 +1,6 @@
-from src.category import Category
+import pytest
+
+from src.category import Category, ProductIterator
 
 
 def test_category_init1(first_category, first_product, second_product):
@@ -29,3 +31,11 @@ def test_category_init2(second_category, third_product):
 
 def test_category_str(first_category):
     assert str(first_category) == "Смартфоны, количество продуктов: 13 шт."
+
+
+def test_product_iterator(first_product, second_product, first_category):
+    product_iterator = ProductIterator(first_category)
+    assert next(product_iterator) == first_product
+    assert next(product_iterator) == second_product
+    with pytest.raises(StopIteration):
+        next(product_iterator)
