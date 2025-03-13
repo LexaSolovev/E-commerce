@@ -39,3 +39,21 @@ class Category:
         for product in self.__products:
             count_products += product.quantity
         return f'{self.name}, количество продуктов: {count_products} шт.'
+
+
+class ProductIterator:
+    """Вспомогательный класс для перебора продуктов в категории"""
+
+    def __init__(self, category: Category):
+        self.__products = category.products
+        self.current_index = -1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current_index + 1 < len(self.__products):
+            self.current_index += 1
+            return self.__products[self.current_index]
+        else:
+            raise StopIteration
