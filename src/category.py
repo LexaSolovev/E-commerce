@@ -1,3 +1,5 @@
+from subprocess import check_output
+
 from src.product import Product
 
 
@@ -31,3 +33,9 @@ class Category:
     def add_product(self, product: Product):
         self.__products.append(product)
         Category.product_count += 1
+
+    def __str__(self):
+        count_products = 0
+        for product in self.__products:
+            count_products += product.quantity
+        return f'{self.name} количество продуктов: {count_products} шт.'
