@@ -37,4 +37,3 @@ class Product:
 
     def __add__(self, other):
         return (self.__price * self.quantity) + (other.price * other.quantity)
-

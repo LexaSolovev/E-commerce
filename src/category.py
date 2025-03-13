@@ -1,5 +1,3 @@
-from subprocess import check_output
-
 from src.product import Product
 
 
