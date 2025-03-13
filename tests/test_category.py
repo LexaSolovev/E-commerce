@@ -25,3 +25,7 @@ def test_category_init2(second_category, third_product):
     assert Category.category_count == 2
     assert Category.product_count == 4
     assert second_category.products_str == "55\" QLED 4K, 123000.0 руб. Остаток: 7 шт.\n"
+
+
+def test_category_str(first_category):
+    assert str(first_category) == "Смартфоны, количество продуктов: 13 шт."
