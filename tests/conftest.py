@@ -1,6 +1,7 @@
 import pytest
 
 from src.category import Category
+from src.lawngrass import LawnGrass
 from src.product import Product
 from src.smartphone import Smartphone
 
@@ -66,4 +67,30 @@ def iphone():
         "Iphone 15",
         "512GB",
         "Gray space"
+    )
+
+
+@pytest.fixture
+def universal_lawngrass():
+    return LawnGrass(
+        "Семена газонной травы, травосмесь Универсальная 5 кг",
+        "газон универсальный, овсяница красная, мятлик, райграс, тимофеевка, овсяница луговая",
+        2559.0,
+        10,
+        "Россия",
+        "6-8 дней",
+        "Зеленый"
+    )
+
+
+@pytest.fixture
+def canada_green():
+    return LawnGrass(
+        "Canada Green Village 5 кг",
+        "Газонная трава семена Канада Грин Дачная 5 кг",
+        2310.0,
+        5,
+        "Канада",
+        "7-14 дней",
+        "Зеленый"
     )
