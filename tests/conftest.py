@@ -71,7 +71,7 @@ def iphone():
 
 
 @pytest.fixture
-def universal_lawngrass():
+def universal():
     return LawnGrass(
         "Семена газонной травы, травосмесь Универсальная 5 кг",
         "газон универсальный, овсяница красная, мятлик, райграс, тимофеевка, овсяница луговая",
