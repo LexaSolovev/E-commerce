@@ -33,7 +33,7 @@ class Category:
             self.__products.append(product)
             Category.product_count += 1
         else:
-            raise TypeError
+            raise TypeError("Невозможно добавить указанный продукт в категорию")
 
 
     def __str__(self):
