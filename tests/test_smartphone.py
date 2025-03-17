@@ -18,4 +18,4 @@ def test_smartphone_add(samsung, iphone):
 
 def test_smartphone_add_error(samsung, second_category):
     with pytest.raises(TypeError, match=r"Невозможно сложить объекты указанных типов*"):
-        result = samsung + second_category
+        print(samsung + second_category)

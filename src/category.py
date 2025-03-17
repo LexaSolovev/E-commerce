@@ -35,7 +35,6 @@ class Category:
         else:
             raise TypeError("Невозможно добавить указанный продукт в категорию")
 
-
     def __str__(self):
         count_products = 0
         for product in self.__products:

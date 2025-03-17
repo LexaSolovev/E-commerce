@@ -4,7 +4,7 @@ import pytest
 def test_lawngrass_init(universal):
     assert universal.name == "Семена газонной травы, травосмесь Универсальная 5 кг"
     assert universal.description == ("газон универсальный, овсяница красная, "
-                                               "мятлик, райграс, тимофеевка, овсяница луговая")
+                                     "мятлик, райграс, тимофеевка, овсяница луговая")
     assert universal.price == 2559.0
     assert universal.quantity == 10
     assert universal.country == "Россия"
@@ -18,4 +18,4 @@ def test_lawngrass_add(universal, canada_green):
 
 def test_lawngrass_add_error(universal):
     with pytest.raises(TypeError, match=r"Невозможно сложить объекты указанных типов*"):
-        result = universal + 1
+        print(universal + 1)
