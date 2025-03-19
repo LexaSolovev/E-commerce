@@ -36,4 +36,7 @@ class Product:
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
 
     def __add__(self, other):
-        return (self.__price * self.quantity) + (other.price * other.quantity)
+        if type(other) is self.__class__:
+            return (self.__price * self.quantity) + (other.price * other.quantity)
+
+        raise TypeError(f"Невозможно сложить объекты указанных типов: {type(self)} и {type(other)}")

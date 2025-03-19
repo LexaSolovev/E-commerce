@@ -1,7 +1,9 @@
 import pytest
 
 from src.category import Category
+from src.lawngrass import LawnGrass
 from src.product import Product
+from src.smartphone import Smartphone
 
 
 @pytest.fixture
@@ -38,3 +40,57 @@ def second_category(third_product):
         [third_product]
     )
     return category
+
+
+@pytest.fixture
+def samsung():
+    return Smartphone(
+        "Samsung Galaxy S23 Ultra",
+        "256GB, Серый цвет, 200MP камера",
+        180000.0,
+        5,
+        1455382,
+        "Galaxy S23 Ultra",
+        "256GB",
+        "Серый"
+    )
+
+
+@pytest.fixture
+def iphone():
+    return Smartphone(
+        "Iphone 15",
+        "512GB, Gray space",
+        210000.0,
+        8,
+        1532264,
+        "Iphone 15",
+        "512GB",
+        "Gray space"
+    )
+
+
+@pytest.fixture
+def universal():
+    return LawnGrass(
+        "Семена газонной травы, травосмесь Универсальная 5 кг",
+        "газон универсальный, овсяница красная, мятлик, райграс, тимофеевка, овсяница луговая",
+        2559.0,
+        10,
+        "Россия",
+        "6-8 дней",
+        "Зеленый"
+    )
+
+
+@pytest.fixture
+def canada_green():
+    return LawnGrass(
+        "Canada Green Village 5 кг",
+        "Газонная трава семена Канада Грин Дачная 5 кг",
+        2310.0,
+        5,
+        "Канада",
+        "7-14 дней",
+        "Зеленый"
+    )

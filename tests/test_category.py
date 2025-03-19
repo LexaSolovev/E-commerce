@@ -39,3 +39,8 @@ def test_product_iterator(first_product, second_product, first_category):
     assert next(product_iterator) == second_product
     with pytest.raises(StopIteration):
         next(product_iterator)
+
+
+def test_category_add_product_error(first_category):
+    with pytest.raises(TypeError, match="Невозможно добавить указанный продукт в категорию"):
+        first_category.add_product("Непонятно что")
