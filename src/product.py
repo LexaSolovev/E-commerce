@@ -1,4 +1,4 @@
-from src.MixinPrintObject import MixinPrint
+from src.mixin_print import MixinPrint
 from src.base_product import BaseProduct
 
 
