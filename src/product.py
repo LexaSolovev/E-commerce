@@ -1,5 +1,5 @@
-from src.mixin_print import MixinPrint
 from src.base_product import BaseProduct
+from src.mixin_print import MixinPrint
 
 
 class Product(MixinPrint, BaseProduct):
