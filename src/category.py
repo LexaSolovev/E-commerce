@@ -52,7 +52,6 @@ class Category:
 
 
 
-
 class ProductIterator:
     """Вспомогательный класс для перебора продуктов в категории"""
 
