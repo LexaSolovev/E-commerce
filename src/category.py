@@ -1,5 +1,5 @@
-from src.product import Product
 from src.exceptions import ZeroQuantityProductException
+from src.product import Product
 
 
 class Category:
@@ -49,11 +49,10 @@ class Category:
         """ Функция возвращает среднюю цену всех товаров категории """
         try:
             result = sum([x.price for x in self.__products]) / len(self.__products)
-        except ZeroDivisionError as e:
+        except ZeroDivisionError:
             result = 0
 
         return result
-
 
 
 class ProductIterator:
