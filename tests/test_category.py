@@ -44,3 +44,12 @@ def test_product_iterator(first_product, second_product, first_category):
 def test_category_add_product_error(first_category):
     with pytest.raises(TypeError, match="Невозможно добавить указанный продукт в категорию"):
         first_category.add_product("Непонятно что")
+
+
+def test_category_middle_price(first_category):
+    assert first_category.middle_price() == 195000.0
+
+
+def test_category_middle_price_empty_products():
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0
