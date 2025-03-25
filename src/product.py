@@ -1,5 +1,8 @@
+from src.base_product import BaseProduct
+from src.mixin_print import MixinPrint
 
-class Product:
+
+class Product(MixinPrint, BaseProduct):
     """Класс для описания продуктов"""
     name: str
     description: str
@@ -11,6 +14,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
 
     @property
     def price(self):
