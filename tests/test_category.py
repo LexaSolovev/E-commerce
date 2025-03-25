@@ -1,6 +1,7 @@
 import pytest
 
 from src.category import Category, ProductIterator
+from src.exceptions import ZeroQuantityProductException
 
 
 def test_category_init1(first_category, first_product, second_product):
@@ -53,3 +54,9 @@ def test_category_middle_price(first_category):
 def test_category_middle_price_empty_products():
     category_empty = Category("Пустая категория", "Категория без продуктов", [])
     assert category_empty.middle_price() == 0
+
+
+def test_add_product_with_zero_quantity(zero_quantity_product, first_category):
+    with pytest.raises(ZeroQuantityProductException):
+        first_category.add_product(zero_quantity_product)
+        

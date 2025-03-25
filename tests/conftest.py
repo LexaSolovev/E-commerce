@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 from src.category import Category
@@ -94,3 +96,14 @@ def canada_green():
         "7-14 дней",
         "Зеленый"
     )
+
+
+@pytest.fixture
+def zero_quantity_product():
+    with patch.object(Product, "__init__", lambda self, name, description, price, quantity: None):
+        product = Product("Test Product", "Description", 1000.0, 0)
+        product.name = "Test Product"
+        product.description = "Description"
+        product.__price = 1000.0
+        product.quantity = 0
+        return product
