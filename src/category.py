@@ -41,6 +41,17 @@ class Category:
             count_products += product.quantity
         return f'{self.name}, количество продуктов: {count_products} шт.'
 
+    def average_price(self):
+        """ Функция возвращает среднюю цену всех товаров категории """
+        try:
+            result = sum([x.price for x in self.__products]) / len(self.__products)
+        except ZeroDivisionError as e:
+            result = 0
+
+        return result
+
+
+
 
 class ProductIterator:
     """Вспомогательный класс для перебора продуктов в категории"""
