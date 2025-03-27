@@ -1,3 +1,4 @@
+from src.exceptions import ZeroQuantityProductException
 from src.product import Product
 
 
@@ -30,8 +31,11 @@ class Category:
 
     def add_product(self, product: Product):
         if isinstance(product, Product):
-            self.__products.append(product)
-            Category.product_count += 1
+            if product.quantity != 0:
+                self.__products.append(product)
+                Category.product_count += 1
+            else:
+                raise ZeroQuantityProductException("Товар с нулевым количеством не может быть добавлен")
         else:
             raise TypeError("Невозможно добавить указанный продукт в категорию")
 
@@ -40,6 +44,15 @@ class Category:
         for product in self.__products:
             count_products += product.quantity
         return f'{self.name}, количество продуктов: {count_products} шт.'
+
+    def middle_price(self):
+        """ Функция возвращает среднюю цену всех товаров категории """
+        try:
+            result = sum([x.price for x in self.__products]) / len(self.__products)
+        except ZeroDivisionError:
+            result = 0
+
+        return result
 
 
 class ProductIterator:
